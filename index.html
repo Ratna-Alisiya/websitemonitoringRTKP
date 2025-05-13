@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Packaging System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Smart Packaging System</h1>
+
+    <label for="sampelSelector">Pilih Sampel:</label>
+    <select id="sampelSelector" onchange="isiOtomatis()">
+        <option value="">-- Pilih Sampel --</option>
+        <option value="RTK-001">RTK-001</option>
+        <option value="RTK-002">RTK-002</option>
+        <option value="RTK-003">RTK-003</option>
+        <option value="RTK-004">RTK-004</option>
+        <option value="RTK-005">RTK-005</option>
+    </select>
+
+    <form id="form">
+        <label for="ph">pH:</label>
+        <input type="number" step="0.01" id="ph" name="ph"><br><br>
+
+        <label for="mikroba">Mikroba (CFU/g):</label>
+        <input type="number" id="mikroba" name="mikroba"><br><br>
+
+        <label for="suhu">Suhu (°C):</label>
+        <input type="number" id="suhu" name="suhu"><br><br>
+
+        <button type="button" onclick="cekKelayakan()">Cek Kelayakan</button>
+    </form>
+
+    <p id="hasilKelayakan"></p>
+
+    <canvas id="grafik" width="600" height="300"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
